@@ -51,6 +51,12 @@ module DeploymentSim {
    stack size Default.STACK_SIZE \
    priority 100
 
+
+  instance gsStatusStore: ChessSim.GsStatusStore base id 0x10005000 \
+   queue size Default.QUEUE_SIZE \
+   stack size Default.STACK_SIZE \
+   priority 98
+
   # ----------------------------------------------------------------------
   # Queued component instances
   # ----------------------------------------------------------------------
