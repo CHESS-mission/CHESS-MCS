@@ -67,6 +67,27 @@ This installs:
 
 No additional packages are needed.
 
+_Note: If you are running directly on a Linux system and see the error below,_
+
+```
+ERROR: Could not open requirements file: [Errno 2] No such file or directory: './lib/fprime/requirements.txt'
+```
+
+_this usually means that pip is able to find `requirements.txt`, but one of the files it references (the F′ framework `submodule`) hasn't been downloaded yet._
+
+_Fix: Inside the `CHESS-MCS` directory, run_
+
+```bash
+git submodule update --init --recursive
+```
+
+_This will download the F′ framework into `lib/fprime`._
+_After that, run the install command again:_
+
+```bash
+pip install -r requirements.txt
+```
+
 ---
 
 ## 5. Generate and build the project
