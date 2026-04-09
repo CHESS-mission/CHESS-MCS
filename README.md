@@ -64,6 +64,7 @@ This installs:
 * F′ core tools,
 * the F′ GDS,
 * and all required Python dependencies.
+* Fast API to run the command interface
 
 No additional packages are needed.
 
@@ -128,6 +129,8 @@ Open that address in a browser. You should see:
 * the F′ GDS interface,
 * telemetry updating once per second from `sim_data.csv`,
 * the `DeploymentSim` executable running automatically.
+
+If you want the custom Dashboard view, open the `Dashboard` tab and upload `dashboard.xml` from the repository root.
 
 ---
 

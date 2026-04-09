@@ -35,6 +35,11 @@ module DeploymentSim {
     instance csvTM
 
   # ----------------------------------------------------------------------
+  # Ground Software -  State
+  # ----------------------------------------------------------------------
+    instance gsStatusStore
+
+  # ----------------------------------------------------------------------
   # Pattern graph specifiers
   # ----------------------------------------------------------------------
 
@@ -133,6 +138,20 @@ module DeploymentSim {
     connections DeploymentSim {
 
     }
+
+   # connections GsStatusStore_CdhCore {
+    #  CdhCore.cmdDisp.compCmdSend[0] -> gsStatusStore.cmdIn
+     # gsStatusStore.cmdRegOut -> CdhCore.cmdDisp.compCmdReg[0]
+      #gsStatusStore.cmdResponseOut -> CdhCore.cmdDisp.compCmdStat[0]
+#
+ #     gsStatusStore.logOut -> CdhCore.events.LogRecv
+  #    #gsStatusStore.logTextOut -> CdhCore.textLogger.TextRecv
+   #   gsStatusStore.tlmOut -> CdhCore.tlmSend.TlmRecv
+    #  gsStatusStore.timeGetOut -> chronoTime.timeGet
+    #}
+    
+
+
 
   }
 
