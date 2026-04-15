@@ -234,10 +234,13 @@
   </arrays>
   <commands>
     <command component="cmdDisp" mnemonic="CMD_NO_OP" opcode="0x500" description="No-op command">
-      <args/>
+      <args>
+        <arg name="procedure_id" description="Procedure grouping identifier (auto-injected by CHESS-MCS backend)." type="U16"/>
+      </args>
     </command>
     <command component="cmdDisp" mnemonic="CMD_NO_OP_STRING" opcode="0x501" description="No-op string command">
       <args>
+        <arg name="procedure_id" description="Procedure grouping identifier (auto-injected by CHESS-MCS backend)." type="U16"/>
         <arg name="arg1" description="&#10;          The String command argument&#10;          " len="40" type="string"/>
       </args>
     </command>

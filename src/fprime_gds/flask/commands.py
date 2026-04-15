@@ -27,11 +27,36 @@ import fprime_gds.common.models.serialize.type_exceptions
 import werkzeug.exceptions
 
 import fprime_gds.common.data_types.cmd_data
+from fprime_gds.flask.command_procedure_id import (
+    command_has_procedure_id,
+    procedure_id_arg_name,
+    procedure_id_for_command,
+)
+from fprime_gds.flask.json import getter_based_json
 from fprime_gds.flask.resource import DictionaryResource, HistoryResourceBase
 
 
 class CommandDictionary(DictionaryResource):
-    """Channel dictionary shares implementation"""
+    """Command dictionary endpoint with optional procedure-id argument filtering."""
+
+    def get(self):
+        filtered_dictionary = {}
+        for command_name, command_template in self.dictionary.items():
+            command_json = getter_based_json(command_template)
+            if command_has_procedure_id(command_name):
+                arg_name = procedure_id_arg_name(command_name)
+                command_json["args"] = [
+                    argument
+                    for argument in command_json.get("args", [])
+                    if argument.get("name") != arg_name
+                ]
+            filtered_dictionary[command_name] = command_json
+        return {
+            "dictionary": filtered_dictionary,
+            "project_version": self.project_version,
+            "framework_version": self.framework_version,
+            "metadata": self.metadata,
+        }
 
 
 class CommandHistory(HistoryResourceBase):
@@ -94,6 +119,8 @@ class Command(flask_restful.Resource):
             )
         if arg_list is None:
             arg_list = []
+        arg_list = list(arg_list)
+        injected_procedure_id = self._inject_procedure_id(command, arg_list)
         try:
             self.sender.send_command(command, arg_list)
         except fprime_gds.common.models.serialize.type_exceptions.NotInitializedException:
@@ -102,4 +129,36 @@ class Command(flask_restful.Resource):
             raise CommandArgumentsInvalidException(exc.errors)
         except KeyError as key_error:
             raise InvalidCommandException(key_error)
-        return {"message": "success"}
+        response = {"message": "success"}
+        if injected_procedure_id is not None:
+            response["procedure_id"] = injected_procedure_id
+        return response
+
+    def _inject_procedure_id(self, command, arg_list):
+        """
+        Inject procedure_id for configured commands when caller omitted it.
+
+        Returns:
+            int | None: injected procedure ID, else None
+        """
+        if not isinstance(command, str) or not command_has_procedure_id(command):
+            return None
+
+        command_template = self.sender.dictionaries.command_name.get(command)
+        if command_template is None:
+            return None
+
+        arg_name = procedure_id_arg_name(command)
+        template_arg_names = [arg_spec[0] for arg_spec in command_template.get_args()]
+        if arg_name not in template_arg_names:
+            return None
+
+        procedure_arg_index = template_arg_names.index(arg_name)
+        expected_count = len(template_arg_names)
+
+        # Inject only when the caller omitted the procedure-id argument.
+        if len(arg_list) == expected_count - 1:
+            procedure_id = procedure_id_for_command(command)
+            arg_list.insert(procedure_arg_index, procedure_id)
+            return procedure_id
+        return None

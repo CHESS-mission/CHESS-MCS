@@ -1,0 +1,3 @@
+; demo seq for CHESS-MCS JSON dictionary
+R00:00:00 Ref.cmdDisp.CMD_NO_OP
+R00:00:00 Ref.cmdDisp.CMD_NO_OP_STRING "Hello from seq"
