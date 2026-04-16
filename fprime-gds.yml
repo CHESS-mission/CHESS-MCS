@@ -1,0 +1,5 @@
+command-line-options:
+  # Minimal repo-local GUI startup
+  deployment: deployment-sim
+  no-app:
+  no-zmq:
