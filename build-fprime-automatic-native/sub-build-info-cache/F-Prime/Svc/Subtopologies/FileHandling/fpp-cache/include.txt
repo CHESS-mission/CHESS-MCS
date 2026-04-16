@@ -1,0 +1,10 @@
+/home/melinad/CHESS-MCS/lib/fprime/Svc/FileDownlink/Commands.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/FileDownlink/Events.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/FileDownlink/Telemetry.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/FileManager/Commands.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/FileManager/Events.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/FileManager/Telemetry.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/FileUplink/Events.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/FileUplink/Telemetry.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/PrmDb/PrmDbCmdDict.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/PrmDb/PrmDbEventDict.fppi

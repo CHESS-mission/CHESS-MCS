@@ -1,0 +1,6 @@
+BufferAccumulatorComponentAc.cpp
+BufferAccumulatorComponentAc.hpp
+BufferAccumulator_BlockModeEnumAc.cpp
+BufferAccumulator_BlockModeEnumAc.hpp
+BufferAccumulator_OpStateEnumAc.cpp
+BufferAccumulator_OpStateEnumAc.hpp

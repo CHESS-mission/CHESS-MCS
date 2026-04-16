@@ -1,0 +1,2 @@
+/home/melinad/CHESS-MCS/build-fprime-automatic-native/F-Prime/default/config/FpConfig.fpp
+/home/melinad/CHESS-MCS/build-fprime-automatic-native/cmake/platform/unix/Platform/PlatformTypes.fpp

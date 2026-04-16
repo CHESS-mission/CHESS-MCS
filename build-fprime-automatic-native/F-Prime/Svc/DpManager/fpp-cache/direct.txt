@@ -1,0 +1,6 @@
+/home/melinad/CHESS-MCS/build-fprime-automatic-native/F-Prime/default/config/AcConstants.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Cmd/Cmd.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Dp/Dp.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Log/Log.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Tlm/Tlm.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Svc/Sched/Sched.fpp

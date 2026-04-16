@@ -1,0 +1,8 @@
+CustomVersionDbSerializableAc.cpp
+CustomVersionDbSerializableAc.hpp
+VersionComponentAc.cpp
+VersionComponentAc.hpp
+VersionEnabledEnumAc.cpp
+VersionEnabledEnumAc.hpp
+VersionTypeEnumAc.cpp
+VersionTypeEnumAc.hpp

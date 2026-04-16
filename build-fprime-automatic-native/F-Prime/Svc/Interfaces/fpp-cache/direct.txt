@@ -1,0 +1,6 @@
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Buffer/Buffer.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Cmd/Cmd.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Com/Com.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Ports/SuccessCondition/SuccessCondition.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Time/Time.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Svc/Ports/CommsPorts/CommsPorts.fpp

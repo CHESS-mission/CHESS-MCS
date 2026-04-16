@@ -1,0 +1,4 @@
+FprimeRouterComponentAc.cpp
+FprimeRouterComponentAc.hpp
+FprimeRouter_AllocationReasonEnumAc.cpp
+FprimeRouter_AllocationReasonEnumAc.hpp

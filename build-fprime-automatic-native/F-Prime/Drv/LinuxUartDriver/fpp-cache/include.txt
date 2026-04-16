@@ -1,0 +1,2 @@
+/home/melinad/CHESS-MCS/lib/fprime/Drv/LinuxUartDriver/Events.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Drv/LinuxUartDriver/Telemetry.fppi

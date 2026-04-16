@@ -1,0 +1,6 @@
+/home/melinad/CHESS-MCS/lib/fprime/Svc/FpySequencer/FpySequencerCommands.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/FpySequencer/FpySequencerDirectives.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/FpySequencer/FpySequencerEvents.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/FpySequencer/FpySequencerParams.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/FpySequencer/FpySequencerStateMachine.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/FpySequencer/FpySequencerTelemetry.fppi

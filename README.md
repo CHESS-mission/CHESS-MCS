@@ -14,6 +14,8 @@ uv venv .venv
 uv sync
 ```
 
+On Linux, run `source .venv/bin/activate` instead of `.\.venv\Scripts\Activate.ps1`.
+
 ## Run
 
 ```powershell

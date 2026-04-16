@@ -1,0 +1,6 @@
+DpCatalogComponentAc.cpp
+DpCatalogComponentAc.hpp
+DpHdrFieldEnumAc.cpp
+DpHdrFieldEnumAc.hpp
+DpRecordSerializableAc.cpp
+DpRecordSerializableAc.hpp

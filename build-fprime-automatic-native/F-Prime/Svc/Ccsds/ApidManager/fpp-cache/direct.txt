@@ -1,0 +1,3 @@
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Log/Log.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Time/Time.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Svc/Ccsds/Ports/Ports.fpp

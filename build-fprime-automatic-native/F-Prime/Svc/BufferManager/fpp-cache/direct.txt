@@ -1,0 +1,7 @@
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Buffer/Buffer.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Log/Log.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Time/Time.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Tlm/Tlm.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Svc/BufferManager/Events.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/BufferManager/Telemetry.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/Sched/Sched.fpp

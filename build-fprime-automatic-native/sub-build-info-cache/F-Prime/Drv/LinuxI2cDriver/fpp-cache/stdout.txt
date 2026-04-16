@@ -1,0 +1,5 @@
+/home/melinad/CHESS-MCS/build-fprime-automatic-native/F-Prime/default/config/FpConfig.fpp
+/home/melinad/CHESS-MCS/build-fprime-automatic-native/cmake/platform/unix/Platform/PlatformTypes.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Drv/Interfaces/I2c.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Drv/Ports/I2cDriverPorts.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Buffer/Buffer.fpp

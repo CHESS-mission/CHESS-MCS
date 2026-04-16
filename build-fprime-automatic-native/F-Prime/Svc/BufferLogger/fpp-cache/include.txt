@@ -1,0 +1,3 @@
+/home/melinad/CHESS-MCS/lib/fprime/Svc/BufferLogger/Commands.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/BufferLogger/Events.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/BufferLogger/Telemetry.fppi

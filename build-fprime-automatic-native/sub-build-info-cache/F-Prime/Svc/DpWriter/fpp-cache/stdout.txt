@@ -1,0 +1,10 @@
+/home/melinad/CHESS-MCS/build-fprime-automatic-native/F-Prime/default/config/AcConstants.fpp
+/home/melinad/CHESS-MCS/build-fprime-automatic-native/F-Prime/default/config/FpConfig.fpp
+/home/melinad/CHESS-MCS/build-fprime-automatic-native/cmake/platform/unix/Platform/PlatformTypes.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Buffer/Buffer.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Cmd/Cmd.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Log/Log.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Time/Time.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Tlm/Tlm.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Svc/DpPorts/DpPorts.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Svc/Sched/Sched.fpp

@@ -1,0 +1,8 @@
+/home/melinad/CHESS-MCS/build-fprime-automatic-native/F-Prime/default/config/ComCfg.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Buffer/Buffer.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Log/Log.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Time/Time.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Tlm/Tlm.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Svc/FileUplink/Events.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/FileUplink/Telemetry.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/Ping/Ping.fpp

@@ -1,0 +1,12 @@
+/home/melinad/CHESS-MCS/build-fprime-automatic-native/F-Prime/Fpp/ToCpp.fpp
+/home/melinad/CHESS-MCS/build-fprime-automatic-native/F-Prime/Svc/Subtopologies/ComFprime/ComFprimeConfig/ComFprimeConfig.fpp
+/home/melinad/CHESS-MCS/build-fprime-automatic-native/F-Prime/default/config/DpCfg.fpp
+/home/melinad/CHESS-MCS/build-fprime-automatic-native/F-Prime/default/config/FpConstants.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Dp/Dp.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Svc/BufferManager/BufferManager.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Svc/ComQueue/ComQueue.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Svc/ComStub/ComStub.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Svc/FprimeDeframer/FprimeDeframer.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Svc/FprimeFramer/FprimeFramer.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Svc/FprimeRouter/FprimeRouter.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Svc/FrameAccumulator/FrameAccumulator.fpp

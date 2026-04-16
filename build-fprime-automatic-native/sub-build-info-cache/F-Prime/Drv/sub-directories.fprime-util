@@ -1,0 +1,13 @@
+/home/melinad/CHESS-MCS/lib/fprime/Drv/Interfaces/
+/home/melinad/CHESS-MCS/lib/fprime/Drv/Ports/
+/home/melinad/CHESS-MCS/lib/fprime/Drv/AsyncByteStreamBufferAdapter/
+/home/melinad/CHESS-MCS/lib/fprime/Drv/ByteStreamBufferAdapter/
+/home/melinad/CHESS-MCS/lib/fprime/Drv/ByteStreamDriverModel/
+/home/melinad/CHESS-MCS/lib/fprime/Drv/LinuxGpioDriver/
+/home/melinad/CHESS-MCS/lib/fprime/Drv/LinuxI2cDriver/
+/home/melinad/CHESS-MCS/lib/fprime/Drv/LinuxSpiDriver/
+/home/melinad/CHESS-MCS/lib/fprime/Drv/LinuxUartDriver/
+/home/melinad/CHESS-MCS/lib/fprime/Drv/Ip/
+/home/melinad/CHESS-MCS/lib/fprime/Drv/TcpClient/
+/home/melinad/CHESS-MCS/lib/fprime/Drv/TcpServer/
+/home/melinad/CHESS-MCS/lib/fprime/Drv/Udp/

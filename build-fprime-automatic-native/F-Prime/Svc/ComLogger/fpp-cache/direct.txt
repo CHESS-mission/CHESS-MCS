@@ -1,0 +1,6 @@
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Cmd/Cmd.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Com/Com.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Log/Log.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Svc/ComLogger/Commands.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/ComLogger/Events.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/Ping/Ping.fpp

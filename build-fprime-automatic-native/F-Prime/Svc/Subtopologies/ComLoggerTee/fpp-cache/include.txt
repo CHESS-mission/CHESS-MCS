@@ -1,0 +1,3 @@
+/home/melinad/CHESS-MCS/lib/fprime/Svc/ComLogger/Commands.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/ComLogger/Events.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Svc/Subtopologies/ComLoggerTee/subtopology-template.fppi

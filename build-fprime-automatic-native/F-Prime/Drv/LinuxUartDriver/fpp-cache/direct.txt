@@ -1,0 +1,6 @@
+/home/melinad/CHESS-MCS/lib/fprime/Drv/Interfaces/ByteStreamDriver.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Drv/LinuxUartDriver/Events.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Drv/LinuxUartDriver/Telemetry.fppi
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Log/Log.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Fw/Tlm/Tlm.fpp
+/home/melinad/CHESS-MCS/lib/fprime/Svc/Sched/Sched.fpp

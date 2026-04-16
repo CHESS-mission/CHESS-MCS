@@ -1,0 +1,4 @@
+AggregationMachineStateMachineAc.cpp
+AggregationMachineStateMachineAc.hpp
+ComAggregatorComponentAc.cpp
+ComAggregatorComponentAc.hpp

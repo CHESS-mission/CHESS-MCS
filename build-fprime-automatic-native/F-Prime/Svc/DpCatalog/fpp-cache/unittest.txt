@@ -1,0 +1,5 @@
+DpCatalogGTestBase.cpp
+DpCatalogGTestBase.hpp
+DpCatalogTesterBase.cpp
+DpCatalogTesterBase.hpp
+DpCatalogTesterHelpers.cpp

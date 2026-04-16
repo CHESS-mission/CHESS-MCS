@@ -1,0 +1,7 @@
+PlatformAssertArgTypeAliasAc.hpp
+PlatformIndexTypeAliasAc.hpp
+PlatformQueuePriorityTypeAliasAc.hpp
+PlatformSignedSizeTypeAliasAc.hpp
+PlatformSizeTypeAliasAc.hpp
+PlatformTaskIdTypeAliasAc.hpp
+PlatformTaskPriorityTypeAliasAc.hpp
