@@ -38,6 +38,37 @@ The repository already contains:
 * the simulation data,
 * and all required configuration files.
 
+## 1. System prerequisites
+
+Install the minimal dependencies:
+
+```bash
+sudo apt update
+sudo apt install -y \
+  git \
+  python3 \
+  python3-venv \
+  python3-pip \
+  cmake \
+  build-essential
+```
+
+---
+
+## 2. Clone the repository
+
+```bash
+git clone https://github.com/PabloSarro/CHESS-MCS.git
+cd CHESS-MCS
+```
+
+The repository already contains:
+
+* the F′ project,
+* the deployment,
+* the simulation data,
+* and all required configuration files.
+
 Thus no project generation is needed.
 
 ---
