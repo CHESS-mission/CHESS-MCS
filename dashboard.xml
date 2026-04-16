@@ -1,0 +1,26 @@
+<dashboard-box title="GS Status Dashboard" border-color="black">
+
+    <dashboard-box title="GS Status" border-color="gray">
+        <channel-table
+            fields="'Channel Name' 'Channel Value' 'Last Sample Time'"
+            items-shown="
+                DeploymentSim.gsStatusStore.LatestGsStatus
+                DeploymentSim.gsStatusStore.LatestBackendHealth
+                DeploymentSim.gsStatusStore.LatestServiceStatusRaw
+                DeploymentSim.gsStatusStore.LatestDownlinkStatus
+                DeploymentSim.gsStatusStore.LatestPassActive
+                DeploymentSim.gsStatusStore.LatestTimeToAosS
+                DeploymentSim.gsStatusStore.LatestTimeToLosS
+                DeploymentSim.gsStatusStore.LatestRssiDbm
+                DeploymentSim.gsStatusStore.LatestSnrDb
+            "
+        />
+    </dashboard-box>
+
+    <dashboard-box title="Events" border-color="gray">
+        <event-list
+            fields="'Event Time' 'Event Name' 'Event Severity' 'Event Description'"
+        />
+    </dashboard-box>
+
+</dashboard-box>
