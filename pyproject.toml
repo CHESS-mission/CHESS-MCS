@@ -45,7 +45,8 @@ dependencies = [
     "pydantic>=2.6",
     "PyYAML>=6.0.2",
     "spacepackets>=0.30.0",
-    "crc>=7.0.0"
+    "crc>=7.0.0",
+    "influxdb-client==1.49.0"
 ]
 
 [project.urls]
@@ -71,6 +72,10 @@ fprime-merge-dictionary = "fprime_gds.executables.dictionary_merge:main"
 # For Pytest fixtures
 [project.entry-points."pytest11"]
 fprime_test_api = "fprime_gds.common.testing_fw.pytest_integration"
+
+# new entry-points section
+[project.entry-points.fprime_gds]
+influxdb_bridge = "fprime_gds.plugin.influxdb_handler:InfluxDbTelemetryBridge"
 
 ####
 # setuptools_scm dynamically generates version number from git, as well as automatically

@@ -1510,6 +1510,16 @@
     <channel component="systemResources" name="CPU_15" id="0x4b14" format_string="%.2f percent" description="System's CPU Percentage" type="F32"/>
     <channel component="systemResources" name="FRAMEWORK_VERSION" id="0x4b15" description="Software framework version" len="40" type="string"/>
     <channel component="systemResources" name="PROJECT_VERSION" id="0x4b16" description="Software project version" len="40" type="string"/>
+    <channel component="DeploymentSim" name="Altitude"   id="0x9000" description="Satellite altitude (km)"   type="F64"/>
+    <channel component="DeploymentSim" name="Battery"    id="0x9001" description="Battery level (mWh)"       type="F64"/>
+    <channel component="DeploymentSim" name="Mode"       id="0x9002" description="Spacecraft mode"           type="F64"/>
+    <channel component="DeploymentSim" name="Consumption" id="0x9003" description="Power consumption (W)"     type="F64"/>
+    <channel component="DeploymentSim" name="Generation" id="0x9004" description="Power generation (W)"      type="F64"/>
+    <channel component="DeploymentSim" name="Eclipse"    id="0x9005" description="Eclipse flag"              type="F64"/>
+    <channel component="DeploymentSim" name="Visibility" id="0x9006" description="Visibility flag"           type="F64"/>
+    <channel component="DeploymentSim" name="Latitude"   id="0x9007" description="Latitude (deg)"            type="F64"/>
+    <channel component="DeploymentSim" name="Longitude"  id="0x9008" description="Longitude (deg)"           type="F64"/>
+    <channel component="DeploymentSim" name="Storage"    id="0x9009" description="Total data storage (GB)"   type="F64"/>
   </channels>
   <parameters>
     <parameter component="typeDemo" name="CHOICE_PRM" id="0xe00" default="0"/>
