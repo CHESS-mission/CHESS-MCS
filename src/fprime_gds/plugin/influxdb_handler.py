@@ -6,11 +6,15 @@ import os
 import threading
 import time
 
+from dotenv import load_dotenv
 from fprime_gds.common.handlers import DataHandlerPlugin
 from fprime_gds.plugin.definitions import gds_plugin
 from fprime.common.models.serialize.time_type import TimeType
 
 from influxdb_client import InfluxDBClient
+
+# Load .env from the repo root
+load_dotenv()
 
 # F' channel name → InfluxDB field name
 CHANNEL_MAP = {
@@ -43,40 +47,48 @@ class InfluxDbTelemetryBridge(DataHandlerPlugin):
 
     @classmethod
     def get_arguments(cls):
+        # CLI args not strictly necessary since we have .env for inputting credentials,
+        # but may still be helpful to have for flexibility, debugging, and documentation
         return {
             ("--influxdb-url",): {
                 "type": str,
-                "default": "http://localhost:8086",
-                "help": "InfluxDB server URL",
+                "default": os.environ.get("INFLUXDB_URL", "http://localhost:8086"),
+                "help": "InfluxDB server URL (env: INFLUXDB_URL)",
             },
             ("--influxdb-token",): {
                 "type": str,
-                "default": None,
-                "help": "InfluxDB API token (or set INFLUXDB_TOKEN env var)",
+                "default": os.environ.get("INFLUXDB_TOKEN"),
+                "help": "InfluxDB API token (env: INFLUXDB_TOKEN)",
             },
             ("--influxdb-org",): {
                 "type": str,
-                "default": "EST",
-                "help": "InfluxDB organization",
+                "default": os.environ.get("INFLUXDB_ORG", "EST"),
+                "help": "InfluxDB organization (env: INFLUXDB_ORG)",
             },
             ("--influxdb-bucket",): {
                 "type": str,
-                "default": "NICE",
-                "help": "InfluxDB bucket name",
+                "default": os.environ.get("INFLUXDB_BUCKET", "NICE"),
+                "help": "InfluxDB bucket name (env: INFLUXDB_BUCKET)",
             },
             ("--influxdb-poll-interval",): {
                 "type": float,
-                "default": 5.0,
+                "default": float(os.environ.get("INFLUXDB_POLL_INTERVAL", 5.0)),
                 "dest": "influxdb_poll_interval",
-                "help": "Seconds between InfluxDB polls (default: 5.0)",
+                "help": "Seconds between InfluxDB polls (env: INFLUXDB_POLL_INTERVAL)",
             },
         }
 
     def __init__(self, influxdb_url, influxdb_token, influxdb_org,
                  influxdb_bucket, influxdb_poll_interval, **kwargs):
         super().__init__(**kwargs)
-        token = (influxdb_token or os.environ.get("INFLUXDB_TOKEN") or "").strip()
-        self._client = InfluxDBClient(url=influxdb_url, token=token, org=influxdb_org)
+        self._enabled = bool(influxdb_token)
+        if not self._enabled:
+            print("[InfluxDB bridge] No INFLUXDB_TOKEN set — bridge disabled. "
+                "GDS will run normally without simulation data.")
+            return
+        self._client = InfluxDBClient(
+            url=influxdb_url, token=influxdb_token.strip(), org=influxdb_org
+        )
         self._query_api = self._client.query_api()
         self._org = influxdb_org
         self._bucket = influxdb_bucket
@@ -89,6 +101,8 @@ class InfluxDbTelemetryBridge(DataHandlerPlugin):
 
     def set_publisher(self, publisher):
         super().set_publisher(publisher)
+        if not self._enabled:
+            return
         self._thread = threading.Thread(target=self._poll_loop, daemon=True)
         self._thread.start()
 
@@ -143,4 +157,3 @@ class InfluxDbTelemetryBridge(DataHandlerPlugin):
             self._last_time = ts    
 
         print(f"[InfluxDB bridge] Published {len(rows)} rows up to {self._last_time}")
-        

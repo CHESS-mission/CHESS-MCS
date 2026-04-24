@@ -46,7 +46,8 @@ dependencies = [
     "PyYAML>=6.0.2",
     "spacepackets>=0.30.0",
     "crc>=7.0.0",
-    "influxdb-client==1.49.0"
+    "influxdb-client==1.49.0",
+    "python-dotenv>=1.0.0"
 ]
 
 [project.urls]
