@@ -81,6 +81,7 @@ class InfluxDbTelemetryBridge(DataHandlerPlugin):
     def __init__(self, influxdb_url, influxdb_token, influxdb_org,
                  influxdb_bucket, influxdb_poll_interval, **kwargs):
         super().__init__(**kwargs)
+        print(f"[InfluxDB bridge] __init__ called. Token set: {bool(influxdb_token)}")
         self._enabled = bool(influxdb_token)
         if not self._enabled:
             print("[InfluxDB bridge] No INFLUXDB_TOKEN set — bridge disabled. "
@@ -116,13 +117,13 @@ class InfluxDbTelemetryBridge(DataHandlerPlugin):
 
     def _fetch_and_publish(self):
         """Query InfluxDB for new rows and publish each as F' channels."""
-        # On first run, grab everything since 2020 (covers the test data that has synthetic time steps).
+        # On first run, grab everything since 2020 (had used 2020 on timestamps for non-realtime data).
         # On subsequent runs, only fetch rows newer than what we've seen.
         if self._last_time is None:
-            time_filter = "range(start: 2020-01-01T00:00:00Z)"
+            time_filter = "range(start: 2020-01-01T00:00:00Z, stop: 2030-01-01T00:00:00Z)"  # added a far-future stop since DT sim has 2028 epochs
         else:
             ts = self._last_time.strftime("%Y-%m-%dT%H:%M:%S.%fZ")
-            time_filter = f"range(start: {ts})"
+            time_filter = f"range(start: {ts}, stop: 2030-01-01T00:00:00Z)"
 
         query = f'''
             from(bucket: "{self._bucket}")
