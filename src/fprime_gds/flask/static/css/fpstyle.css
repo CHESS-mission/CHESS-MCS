@@ -307,3 +307,124 @@ fieldset.fp-subform {
     padding:0 10px;
     border-bottom:none;
 }
+
+/**
+ * CHESS ground-station status page
+ */
+.gs-view {
+    background: #f7f8fb;
+}
+
+.gs-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem 0.5rem 1.25rem;
+}
+
+.gs-header h2 {
+    margin-bottom: 0.1rem;
+}
+
+.gs-subtitle {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.gs-status-pill {
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 700;
+    min-width: 7rem;
+    padding: 0.35rem 0.75rem;
+    text-align: center;
+}
+
+.gs-status-online {
+    background: #28a745;
+}
+
+.gs-status-offline {
+    background: #6c757d;
+}
+
+.gs-scrollable {
+    padding: 0.75rem 1.25rem 1.25rem 1.25rem;
+}
+
+.gs-alert {
+    margin-bottom: 0.75rem;
+}
+
+.gs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(18rem, 1fr));
+    gap: 0.75rem;
+}
+
+.gs-panel {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-left: 4px solid #fc7d09;
+    border-radius: 4px;
+    padding: 0.85rem 1rem;
+}
+
+.gs-wide-panel {
+    margin-top: 0.75rem;
+}
+
+.gs-panel-title {
+    color: #11172f;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.65rem;
+}
+
+.gs-kv {
+    align-items: baseline;
+    border-top: 1px solid #edf0f4;
+    display: grid;
+    grid-template-columns: minmax(9rem, 45%) minmax(0, 1fr);
+    gap: 1rem;
+    padding: 0.45rem 0;
+}
+
+.gs-kv:first-of-type {
+    border-top: 0;
+}
+
+.gs-label {
+    color: #6c757d;
+    font-size: 0.86rem;
+}
+
+.gs-value {
+    color: #212529;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.95rem;
+    overflow-wrap: anywhere;
+}
+
+.gs-error-row {
+    border-top: 1px solid #edf0f4;
+    color: maroon;
+    padding: 0.45rem 0;
+}
+
+@media (max-width: 900px) {
+    .gs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gs-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .gs-kv {
+        grid-template-columns: 1fr;
+        gap: 0.15rem;
+    }
+}

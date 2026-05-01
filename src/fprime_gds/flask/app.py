@@ -24,6 +24,7 @@ import fprime_gds.flask.channels
 import fprime_gds.flask.commands
 import fprime_gds.flask.errors
 import fprime_gds.flask.events
+import fprime_gds.flask.gs_status
 import fprime_gds.flask.json
 import fprime_gds.flask.logs
 import fprime_gds.flask.sequence
@@ -169,6 +170,10 @@ def construct_app():
                 "commands": pipeline.histories.commands,
             }
         ],
+    )
+    api.add_resource(
+        fprime_gds.flask.gs_status.GroundStationStatus,
+        "/gs-status",
     )
 
     # Optionally serve log files

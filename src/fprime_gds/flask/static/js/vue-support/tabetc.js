@@ -41,6 +41,7 @@ Vue.component("tabbed-etc", {
                     ["Channels", "Chn"], 
                     ["Uplink", "UpL"], 
                     ["Downlink", "DnL"], 
+                    ["GroundStation", "GS", "Ground Station"],
                     ["Dictionaries", "Dct"],
                     ["Charts", "Chr"], 
                     ["Logs", "Log"],
