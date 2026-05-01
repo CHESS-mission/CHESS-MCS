@@ -18,16 +18,24 @@ load_dotenv()
 
 # F' channel name → InfluxDB field name
 CHANNEL_MAP = {
-    "DeploymentSim.Altitude":    "altitude",
-    "DeploymentSim.Battery":     "battery",
-    "DeploymentSim.Mode":        "modes",
-    "DeploymentSim.Consumption": "consumption",
-    "DeploymentSim.Generation":  "generation",
-    "DeploymentSim.Eclipse":     "eclipse",
-    "DeploymentSim.Visibility":  "visibility",
-    "DeploymentSim.Latitude":    "Lat",
-    "DeploymentSim.Longitude":   "Lng",
-    "DeploymentSim.Storage":     "data",
+    "DeploymentSim.Altitude":              "altitude",
+    "DeploymentSim.Battery":               "battery",
+    "DeploymentSim.Mode":                  "modes",
+    "DeploymentSim.Consumption":           "consumption",
+    "DeploymentSim.Generation":            "generation",
+    "DeploymentSim.Eclipse":               "eclipse",
+    "DeploymentSim.Visibility":            "visibility",
+    "DeploymentSim.Latitude":              "Lat",
+    "DeploymentSim.Longitude":             "Lng",
+    "DeploymentSim.Storage":               "data",
+    "DeploymentSim.RAAN":                  "RAAN",
+    "DeploymentSim.AOP":                   "AOP",
+    "DeploymentSim.ECC":                   "ECC",
+    "DeploymentSim.INC":                   "INC",
+    "DeploymentSim.Density":               "density",
+    "DeploymentSim.SolarCellsEfficiency":  "solar_cells_efficiency",
+    "DeploymentSim.StoragePayload":        "data_payload",
+    "DeploymentSim.StorageHK":             "data_HK",
 }
 
 
@@ -117,19 +125,38 @@ class InfluxDbTelemetryBridge(DataHandlerPlugin):
 
     def _fetch_and_publish(self):
         """Query InfluxDB for new rows and publish each as F' channels."""
-        # On first run, grab everything since 2020 (had used 2020 on timestamps for non-realtime data).
-        # On subsequent runs, only fetch rows newer than what we've seen.
+        # Detect bucket wipe: if the most recent row in the bucket is older than
+        # what we've already seen, the sim must have wiped and restarted. -> allows for multiple runs of the sim
+        if self._last_time is not None:
+            latest_query = f'''
+                from(bucket: "{self._bucket}")
+                |> range(start: 2020-01-01T00:00:00Z, stop: 2030-01-01T00:00:00Z)
+                |> filter(fn: (r) => r._measurement == "satellite_data")
+                |> last()
+            '''
+            latest_tables = self._query_api.query(latest_query, org=self._org)
+            latest_ts = None
+            for table in latest_tables:
+                for record in table.records:
+                    if latest_ts is None or record.get_time() > latest_ts:
+                        latest_ts = record.get_time()
+            
+            if latest_ts is not None and latest_ts < self._last_time:
+                print(f"[InfluxDB bridge] Bucket wipe detected — resetting tracking.")
+                self._last_time = None
+
+        # Build time filter
         if self._last_time is None:
-            time_filter = "range(start: 2020-01-01T00:00:00Z, stop: 2030-01-01T00:00:00Z)"  # added a far-future stop since DT sim has 2028 epochs
+            time_filter = "range(start: 2020-01-01T00:00:00Z, stop: 2030-01-01T00:00:00Z)"
         else:
             ts = self._last_time.strftime("%Y-%m-%dT%H:%M:%S.%fZ")
             time_filter = f"range(start: {ts}, stop: 2030-01-01T00:00:00Z)"
 
         query = f'''
             from(bucket: "{self._bucket}")
-              |> {time_filter}
-              |> filter(fn: (r) => r._measurement == "satellite_data")
-              |> sort(columns: ["_time"])
+            |> {time_filter}
+            |> filter(fn: (r) => r._measurement == "satellite_data")
+            |> sort(columns: ["_time"])
         '''
 
         tables = self._query_api.query(query, org=self._org)
@@ -144,6 +171,7 @@ class InfluxDbTelemetryBridge(DataHandlerPlugin):
                 rows.setdefault(ts, {})[record.get_field()] = record.get_value()
 
         if not rows:
+            print(f"[InfluxDB bridge] Polled — no new rows.")
             return
 
         for ts in sorted(rows.keys()):

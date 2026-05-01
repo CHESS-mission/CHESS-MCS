@@ -1520,6 +1520,14 @@
     <channel component="DeploymentSim" name="Latitude"   id="0x9007" description="Latitude (deg)"            type="F64"/>
     <channel component="DeploymentSim" name="Longitude"  id="0x9008" description="Longitude (deg)"           type="F64"/>
     <channel component="DeploymentSim" name="Storage"    id="0x9009" description="Total data storage (GB)"   type="F64"/>
+    <channel component="DeploymentSim" name="RAAN"                  id="0x900a" description="Right ascension of ascending node (deg)" type="F64"/>
+    <channel component="DeploymentSim" name="AOP"                   id="0x900b" description="Argument of perigee (deg)"               type="F64"/>
+    <channel component="DeploymentSim" name="ECC"                   id="0x900c" description="Eccentricity"                            type="F64"/>
+    <channel component="DeploymentSim" name="INC"                   id="0x900d" description="Inclination (deg)"                       type="F64"/>
+    <channel component="DeploymentSim" name="Density"               id="0x900e" description="Atmospheric density"                     type="F64"/>
+    <channel component="DeploymentSim" name="SolarCellsEfficiency"  id="0x900f" description="Solar cells efficiency"                  type="F64"/>
+    <channel component="DeploymentSim" name="StoragePayload"        id="0x9010" description="Payload data storage (GB)"                type="F64"/>
+    <channel component="DeploymentSim" name="StorageHK"             id="0x9011" description="Housekeeping data storage (GB)"           type="F64"/>
   </channels>
   <parameters>
     <parameter component="typeDemo" name="CHOICE_PRM" id="0xe00" default="0"/>
