@@ -1,0 +1,166 @@
+{
+  "_comment": "Source of truth for DeploymentSim telemetry channel definitions and color-coding thresholds.",
+  "_note": "Thresholds are AGGRESSIVELY tightened around the sim's actual values so colors change visibly even during short (60s) sim runs. NOT REALISTIC operational ranges — only useful for visual demos. Loosen to real values once you've confirmed colors work.",
+  "_threshold_semantics": {
+    "low_red": "Critical low",
+    "low_orange": "Warning low",
+    "low_yellow": "Caution low",
+    "high_yellow": "Caution high",
+    "high_orange": "Warning high",
+    "high_red": "Critical high"
+  },
+  "channels": {
+    "DeploymentSim.Altitude": {
+      "id": "0x9000",
+      "type": "F64",
+      "description": "Satellite altitude (km)",
+      "unit": "km",
+      "low_red": 493.55,
+      "low_orange": 493.60,
+      "low_yellow": 493.65,
+      "high_yellow": 493.70,
+      "high_orange": 493.75,
+      "high_red": 493.80
+    },
+    "DeploymentSim.Battery": {
+      "id": "0x9001",
+      "type": "F64",
+      "description": "Battery level (mWh)",
+      "unit": "mWh",
+      "low_red": 217870,
+      "low_orange": 217880,
+      "low_yellow": 217885,
+      "high_yellow": 217890,
+      "high_orange": 217895,
+      "high_red": 217900
+    },
+    "DeploymentSim.Mode": {
+      "id": "0x9002",
+      "type": "F64",
+      "description": "Spacecraft mode",
+      "unit": ""
+    },
+    "DeploymentSim.Consumption": {
+      "id": "0x9003",
+      "type": "F64",
+      "description": "Power consumption (W)",
+      "unit": "W",
+      "high_yellow": 4.10,
+      "high_orange": 4.15,
+      "high_red": 4.20
+    },
+    "DeploymentSim.Generation": {
+      "id": "0x9004",
+      "type": "F64",
+      "description": "Power generation (W)",
+      "unit": "W",
+      "low_yellow": 1,
+      "high_yellow": 5
+    },
+    "DeploymentSim.Eclipse": {
+      "id": "0x9005",
+      "type": "F64",
+      "description": "Eclipse flag",
+      "unit": ""
+    },
+    "DeploymentSim.Visibility": {
+      "id": "0x9006",
+      "type": "F64",
+      "description": "Visibility flag",
+      "unit": ""
+    },
+    "DeploymentSim.Latitude": {
+      "id": "0x9007",
+      "type": "F64",
+      "description": "Latitude (deg)",
+      "unit": "deg",
+      "low_red": -10,
+      "low_orange": -5,
+      "low_yellow": -2,
+      "high_yellow": 2,
+      "high_orange": 5,
+      "high_red": 10
+    },
+    "DeploymentSim.Longitude": {
+      "id": "0x9008",
+      "type": "F64",
+      "description": "Longitude (deg)",
+      "unit": "deg",
+      "low_red": 175,
+      "low_orange": 176,
+      "low_yellow": 177,
+      "high_yellow": 178,
+      "high_orange": 179,
+      "high_red": 180
+    },
+    "DeploymentSim.Storage": {
+      "id": "0x9009",
+      "type": "F64",
+      "description": "Total data storage (GB)",
+      "unit": "GB",
+      "high_yellow": 100,
+      "high_orange": 150,
+      "high_red": 200
+    },
+    "DeploymentSim.RAAN": {
+      "id": "0x900a",
+      "type": "F64",
+      "description": "Right ascension of ascending node (deg)",
+      "unit": "deg"
+    },
+    "DeploymentSim.AOP": {
+      "id": "0x900b",
+      "type": "F64",
+      "description": "Argument of perigee (deg)",
+      "unit": "deg"
+    },
+    "DeploymentSim.ECC": {
+      "id": "0x900c",
+      "type": "F64",
+      "description": "Eccentricity",
+      "unit": "",
+      "high_yellow": 0.001,
+      "high_orange": 0.005,
+      "high_red": 0.01
+    },
+    "DeploymentSim.INC": {
+      "id": "0x900d",
+      "type": "F64",
+      "description": "Inclination (deg)",
+      "unit": "deg"
+    },
+    "DeploymentSim.Density": {
+      "id": "0x900e",
+      "type": "F64",
+      "description": "Atmospheric density",
+      "unit": "kg/m^3"
+    },
+    "DeploymentSim.SolarCellsEfficiency": {
+      "id": "0x900f",
+      "type": "F64",
+      "description": "Solar cells efficiency",
+      "unit": "",
+      "low_red": 0.20,
+      "low_orange": 0.23,
+      "low_yellow": 0.26
+    },
+    "DeploymentSim.StoragePayload": {
+      "id": "0x9010",
+      "type": "F64",
+      "description": "Payload data storage (GB)",
+      "unit": "GB",
+      "high_yellow": 50,
+      "high_orange": 100,
+      "high_red": 150
+    },
+    "DeploymentSim.StorageHK": {
+      "id": "0x9011",
+      "type": "F64",
+      "description": "Housekeeping data storage (GB)",
+      "unit": "GB",
+      "high_yellow": 5,
+      "high_orange": 15,
+      "high_red": 30
+    }
+  }
+}

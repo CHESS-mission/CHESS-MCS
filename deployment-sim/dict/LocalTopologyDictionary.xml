@@ -1510,24 +1510,25 @@
     <channel component="systemResources" name="CPU_15" id="0x4b14" format_string="%.2f percent" description="System's CPU Percentage" type="F32"/>
     <channel component="systemResources" name="FRAMEWORK_VERSION" id="0x4b15" description="Software framework version" len="40" type="string"/>
     <channel component="systemResources" name="PROJECT_VERSION" id="0x4b16" description="Software project version" len="40" type="string"/>
-    <channel component="DeploymentSim" name="Altitude"   id="0x9000" description="Satellite altitude (km)"   type="F64"/>
-    <channel component="DeploymentSim" name="Battery"    id="0x9001" description="Battery level (mWh)"       type="F64"/>
-    <channel component="DeploymentSim" name="Mode"       id="0x9002" description="Spacecraft mode"           type="F64"/>
-    <channel component="DeploymentSim" name="Consumption" id="0x9003" description="Power consumption (W)"     type="F64"/>
-    <channel component="DeploymentSim" name="Generation" id="0x9004" description="Power generation (W)"      type="F64"/>
-    <channel component="DeploymentSim" name="Eclipse"    id="0x9005" description="Eclipse flag"              type="F64"/>
-    <channel component="DeploymentSim" name="Visibility" id="0x9006" description="Visibility flag"           type="F64"/>
-    <channel component="DeploymentSim" name="Latitude"   id="0x9007" description="Latitude (deg)"            type="F64"/>
-    <channel component="DeploymentSim" name="Longitude"  id="0x9008" description="Longitude (deg)"           type="F64"/>
-    <channel component="DeploymentSim" name="Storage"    id="0x9009" description="Total data storage (GB)"   type="F64"/>
-    <channel component="DeploymentSim" name="RAAN"                  id="0x900a" description="Right ascension of ascending node (deg)" type="F64"/>
-    <channel component="DeploymentSim" name="AOP"                   id="0x900b" description="Argument of perigee (deg)"               type="F64"/>
-    <channel component="DeploymentSim" name="ECC"                   id="0x900c" description="Eccentricity"                            type="F64"/>
-    <channel component="DeploymentSim" name="INC"                   id="0x900d" description="Inclination (deg)"                       type="F64"/>
-    <channel component="DeploymentSim" name="Density"               id="0x900e" description="Atmospheric density"                     type="F64"/>
-    <channel component="DeploymentSim" name="SolarCellsEfficiency"  id="0x900f" description="Solar cells efficiency"                  type="F64"/>
-    <channel component="DeploymentSim" name="StoragePayload"        id="0x9010" description="Payload data storage (GB)"                type="F64"/>
-    <channel component="DeploymentSim" name="StorageHK"             id="0x9011" description="Housekeeping data storage (GB)"           type="F64"/>
+    <!-- DeploymentSim telemetry channels (auto-generated from tm_ranges_demo.json) -->
+    <channel component="DeploymentSim" name="Altitude" id="0x9000" description="Satellite altitude (km)" low_red="493.55" low_orange="493.6" low_yellow="493.65" high_yellow="493.7" high_orange="493.75" high_red="493.8" type="F64"/>
+    <channel component="DeploymentSim" name="Battery" id="0x9001" description="Battery level (mWh)" low_red="217870" low_orange="217880" low_yellow="217885" high_yellow="217890" high_orange="217895" high_red="217900" type="F64"/>
+    <channel component="DeploymentSim" name="Mode" id="0x9002" description="Spacecraft mode" type="F64"/>
+    <channel component="DeploymentSim" name="Consumption" id="0x9003" description="Power consumption (W)" high_yellow="4.1" high_orange="4.15" high_red="4.2" type="F64"/>
+    <channel component="DeploymentSim" name="Generation" id="0x9004" description="Power generation (W)" low_yellow="1" high_yellow="5" type="F64"/>
+    <channel component="DeploymentSim" name="Eclipse" id="0x9005" description="Eclipse flag" type="F64"/>
+    <channel component="DeploymentSim" name="Visibility" id="0x9006" description="Visibility flag" type="F64"/>
+    <channel component="DeploymentSim" name="Latitude" id="0x9007" description="Latitude (deg)" low_red="-10" low_orange="-5" low_yellow="-2" high_yellow="2" high_orange="5" high_red="10" type="F64"/>
+    <channel component="DeploymentSim" name="Longitude" id="0x9008" description="Longitude (deg)" low_red="175" low_orange="176" low_yellow="177" high_yellow="178" high_orange="179" high_red="180" type="F64"/>
+    <channel component="DeploymentSim" name="Storage" id="0x9009" description="Total data storage (GB)" high_yellow="100" high_orange="150" high_red="200" type="F64"/>
+    <channel component="DeploymentSim" name="RAAN" id="0x900a" description="Right ascension of ascending node (deg)" type="F64"/>
+    <channel component="DeploymentSim" name="AOP" id="0x900b" description="Argument of perigee (deg)" type="F64"/>
+    <channel component="DeploymentSim" name="ECC" id="0x900c" description="Eccentricity" high_yellow="0.001" high_orange="0.005" high_red="0.01" type="F64"/>
+    <channel component="DeploymentSim" name="INC" id="0x900d" description="Inclination (deg)" type="F64"/>
+    <channel component="DeploymentSim" name="Density" id="0x900e" description="Atmospheric density" type="F64"/>
+    <channel component="DeploymentSim" name="SolarCellsEfficiency" id="0x900f" description="Solar cells efficiency" low_red="0.2" low_orange="0.23" low_yellow="0.26" type="F64"/>
+    <channel component="DeploymentSim" name="StoragePayload" id="0x9010" description="Payload data storage (GB)" high_yellow="50" high_orange="100" high_red="150" type="F64"/>
+    <channel component="DeploymentSim" name="StorageHK" id="0x9011" description="Housekeeping data storage (GB)" high_yellow="5" high_orange="15" high_red="30" type="F64"/>
   </channels>
   <parameters>
     <parameter component="typeDemo" name="CHOICE_PRM" id="0xe00" default="0"/>
