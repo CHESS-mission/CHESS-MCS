@@ -113,6 +113,7 @@ Note: Vue.js annotations are used, as Vue is the data-to-view framework of choic
                         <dictionary    v-show="currentTab == 'Dictionaries'"></dictionary>
                         <logging       v-show="currentTab == 'Logs'"></logging>
                         <sequencer     v-show="currentTab == 'Sequences'"></sequencer>
+                        <sim-health v-show="currentTab == 'SimHealth'"></sim-health>
                         <dashboard v-if="config.enableDashboards"    v-show="currentTab == 'Dashboard'"></dashboard>
                         <advanced-settings v-show="currentTab == 'Advanced'"></advanced-settings>
                         <dictionary-version></dictionary-version>

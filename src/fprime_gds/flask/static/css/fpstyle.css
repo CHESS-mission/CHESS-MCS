@@ -307,3 +307,190 @@ fieldset.fp-subform {
     padding:0 10px;
     border-bottom:none;
 }
+
+/**
+ * Simulation Health tab styles
+ * Follows the same pattern as .gs-* (Ground Station) styles from end-simulation branch
+ */
+.sim-view {
+    background: #f7f8fb;
+}
+
+.sim-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem 0.5rem 1.25rem;
+}
+
+.sim-header h2 {
+    margin-bottom: 0.1rem;
+}
+
+.sim-header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.sim-subtitle {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.sim-update-count {
+    color: #6c757d;
+    font-size: 0.85rem;
+}
+
+.sim-status-pill {
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 700;
+    min-width: 7rem;
+    padding: 0.35rem 0.75rem;
+    text-align: center;
+}
+
+.sim-pill-active {
+    background: #28a745;
+}
+
+.sim-pill-idle {
+    background: #6c757d;
+}
+
+.sim-scrollable {
+    padding: 0.75rem 1.25rem 1.25rem 1.25rem;
+}
+
+.sim-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(20rem, 1fr));
+    gap: 0.75rem;
+}
+
+.sim-panel {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-left: 4px solid #375a7f;
+    border-radius: 4px;
+    padding: 0.85rem 1rem;
+}
+
+.sim-panel-title {
+    color: #11172f;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.65rem;
+}
+
+.sim-panel-icon {
+    margin-right: 0.35rem;
+}
+
+.sim-kv {
+    align-items: baseline;
+    border-top: 1px solid #edf0f4;
+    display: grid;
+    grid-template-columns: minmax(8rem, 35%) minmax(0, 1fr) auto;
+    gap: 0.5rem;
+    padding: 0.4rem 0;
+}
+
+.sim-kv:first-of-type {
+    border-top: 0;
+}
+
+.sim-label {
+    color: #6c757d;
+    font-size: 0.86rem;
+    font-weight: 500;
+}
+
+.sim-value {
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.95rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    overflow-wrap: anywhere;
+    transition: background-color 0.3s ease;
+}
+
+.sim-unit {
+    color: #6c757d;
+    font-size: 0.8rem;
+    margin-left: 0.25rem;
+}
+
+.sim-time {
+    color: #adb5bd;
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+/* Health status colors */
+.sim-status-green {
+    background-color: rgba(40, 167, 69, 0.15);
+    color: #1e7e34;
+}
+
+.sim-status-yellow {
+    background-color: rgba(237, 201, 73, 0.3);
+    color: #856404;
+}
+
+.sim-status-orange {
+    background-color: rgba(242, 142, 44, 0.3);
+    color: #a84300;
+}
+
+.sim-status-red {
+    background-color: rgba(251, 128, 114, 0.4);
+    color: #a71d2a;
+}
+
+/* Legend */
+.sim-legend-panel {
+    margin-top: 0.75rem;
+    border-left-color: #adb5bd;
+}
+
+.sim-legend {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.sim-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    color: #495057;
+}
+
+.sim-legend-dot {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .sim-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sim-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .sim-kv {
+        grid-template-columns: 1fr;
+        gap: 0.15rem;
+    }
+}

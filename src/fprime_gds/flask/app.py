@@ -240,6 +240,14 @@ def session():
     return flask.jsonify({"session": uuid.uuid4()}), 200
 
 
+@app.route("/sim-health/ranges")
+def sim_health_ranges():
+    """Serve the telemetry ranges JSON for the Sim Health tab."""
+    ranges_file = os.environ.get("SIM_HEALTH_RANGES", "tm_ranges.json")
+    ranges_dir = os.path.join(os.path.dirname(__file__), "..", "..", "..", "deployment-sim", "dict")
+    return flask.send_from_directory(ranges_dir, ranges_file)
+
+
 @app.after_request
 def set_no_cache(response):
     """Set the no-cache header"""
