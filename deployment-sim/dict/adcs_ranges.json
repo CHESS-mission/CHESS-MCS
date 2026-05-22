@@ -1,0 +1,512 @@
+{
+  "_comment": "ADCS subsystem telemetry channels and FDIR thresholds. Auto-generated from FDIR_Document_-_Pathfinder_0_-_ADCS.csv",
+  "_note": "These are placeholder channels \u2014 not connected to the digital twin simulation. Values will show as empty until real ADCS hardware or a simulator is connected.",
+  "_threshold_semantics": {
+    "low_red": "LCL \u2014 Critical Low",
+    "low_orange": "LWL \u2014 Warning Low",
+    "high_orange": "UWL \u2014 Warning High",
+    "high_red": "UCL \u2014 Critical High"
+  },
+  "subsystem_groups": {
+    "MTQ": {
+      "label": "Magnetorquer (CubeTorquer)",
+      "icon": "\ud83e\uddf2",
+      "channels": [
+        "ADCS.MTQ.Supplyvoltage",
+        "ADCS.MTQ.Coilcurrent",
+        "ADCS.MTQ.PWMdutycycle",
+        "ADCS.MTQ.Estimatedminimummagneticm",
+        "ADCS.MTQ.Unittemperature"
+      ]
+    },
+    "RW": {
+      "label": "Reaction Wheel (CubeWheel)",
+      "icon": "\u2699\ufe0f",
+      "channels": [
+        "ADCS.RW.Wheelspeed",
+        "ADCS.RW.Speedtrackingerror",
+        "ADCS.RW.Motorsupplyvoltage",
+        "ADCS.RW.Digitalsupplyvoltage",
+        "ADCS.RW.Motorcurrent",
+        "ADCS.RW.Powerconsumption",
+        "ADCS.RW.Storedangularmomentum|H|",
+        "ADCS.RW.Unittemperature",
+        "ADCS.RW.Residualmagneticdipole"
+      ]
+    },
+    "CSS": {
+      "label": "Coarse Sun Sensor (CSS SLCD-61N)",
+      "icon": "\u2600\ufe0f",
+      "channels": [
+        "ADCS.CSS.Short-CircuitCurrentISC",
+        "ADCS.CSS.Open-CircuitVoltageVOC",
+        "ADCS.CSS.ReverseDarkCurrentID",
+        "ADCS.CSS.JunctionCapacitanceCJ",
+        "ADCS.CSS.ReverseBiasVoltageVR",
+        "ADCS.CSS.UnitTemperature",
+        "ADCS.CSS.SunIncidenceAngle"
+      ]
+    },
+    "CSEarth": {
+      "label": "Earth Sensor (CubeSense Earth)",
+      "icon": "\ud83c\udf0d",
+      "channels": [
+        "ADCS.CSEarth.SupplyVoltage",
+        "ADCS.CSEarth.AverageCurrentDraw",
+        "ADCS.CSEarth.InrushCurrentPeak",
+        "ADCS.CSEarth.LogicSignalVoltage",
+        "ADCS.CSEarth.UnitTemperature",
+        "ADCS.CSEarth.MeasuredPitchAngle",
+        "ADCS.CSEarth.MeasuredRollAngle",
+        "ADCS.CSEarth.MeasurementAccuracy",
+        "ADCS.CSEarth.DetectionSuccessRate",
+        "ADCS.CSEarth.BodySlewRateDuringMeasure"
+      ]
+    },
+    "CSSun": {
+      "label": "Sun Sensor (CubeSense Sun)",
+      "icon": "\ud83d\udd06",
+      "channels": [
+        "ADCS.CSSun.SupplyVoltage",
+        "ADCS.CSSun.AverageCurrentDraw",
+        "ADCS.CSSun.InrushCurrentPeak",
+        "ADCS.CSSun.LogicSignalVoltage",
+        "ADCS.CSSun.UnitTemperature",
+        "ADCS.CSSun.SunVectorAlphaAngle",
+        "ADCS.CSSun.SunVectorBetaAngle",
+        "ADCS.CSSun.SunUnitVectorMagnitude|[x",
+        "ADCS.CSSun.MeasurementAccuracy",
+        "ADCS.CSSun.DetectionSuccessRate",
+        "ADCS.CSSun.BodySlewRateDuringMeasure",
+        "ADCS.CSSun.ImageSensorExposureLevel"
+      ]
+    }
+  },
+  "channels": {
+    "ADCS.MTQ.Supplyvoltage": {
+      "id": "0xa000",
+      "type": "F32",
+      "description": "CubeTorquer \u2014 Supply voltage",
+      "short_name": "Supply voltage",
+      "unit": "V",
+      "high_orange": 5.1,
+      "high_red": 5.5
+    },
+    "ADCS.MTQ.Coilcurrent": {
+      "id": "0xa001",
+      "type": "F32",
+      "description": "CubeTorquer \u2014 Coil current (at full drive, 5 V)",
+      "short_name": "Coil current",
+      "unit": "mA",
+      "low_red": 30.0,
+      "low_orange": 85.0,
+      "high_orange": 185.0,
+      "high_red": 210.0
+    },
+    "ADCS.MTQ.PWMdutycycle": {
+      "id": "0xa002",
+      "type": "F32",
+      "description": "CubeTorquer \u2014 PWM duty cycle",
+      "short_name": "PWM duty cycle",
+      "unit": "%",
+      "high_orange": 85.0,
+      "high_red": 100.0
+    },
+    "ADCS.MTQ.Estimatedminimummagneticm": {
+      "id": "0xa003",
+      "type": "F32",
+      "description": "CubeTorquer \u2014 Estimated minimum magnetic moment",
+      "short_name": "Estimated minimum magnetic moment",
+      "unit": "Am^2",
+      "low_orange": 0.05,
+      "high_orange": 0.34,
+      "high_red": 0.4
+    },
+    "ADCS.MTQ.Unittemperature": {
+      "id": "0xa004",
+      "type": "F32",
+      "description": "CubeTorquer \u2014 Unit temperature",
+      "short_name": "Unit temperature",
+      "unit": "\u00b0C",
+      "low_red": -35.0,
+      "low_orange": -25.0,
+      "high_orange": 65.0,
+      "high_red": 70.0
+    },
+    "ADCS.RW.Wheelspeed": {
+      "id": "0xa005",
+      "type": "F32",
+      "description": "CubeWheel \u2014 Wheel speed",
+      "short_name": "Wheel speed",
+      "unit": "RPM",
+      "low_red": -9500.0,
+      "low_orange": -8500.0,
+      "high_orange": 8500.0,
+      "high_red": 9500.0
+    },
+    "ADCS.RW.Speedtrackingerror": {
+      "id": "0xa006",
+      "type": "F32",
+      "description": "CubeWheel \u2014 Speed tracking error (|cmd \u2212 meas|)",
+      "short_name": "Speed tracking error",
+      "unit": "RPM",
+      "high_orange": 500.0,
+      "high_red": 1000.0
+    },
+    "ADCS.RW.Motorsupplyvoltage": {
+      "id": "0xa007",
+      "type": "F32",
+      "description": "CubeWheel \u2014 Motor supply voltage (Vbat)",
+      "short_name": "Motor supply voltage",
+      "unit": "V",
+      "low_red": 6.0,
+      "low_orange": 6.4,
+      "high_orange": 16.0,
+      "high_red": 16.8
+    },
+    "ADCS.RW.Digitalsupplyvoltage": {
+      "id": "0xa008",
+      "type": "F32",
+      "description": "CubeWheel \u2014 Digital supply voltage (3.3 V)",
+      "short_name": "Digital supply voltage",
+      "unit": "V",
+      "low_red": 2.7,
+      "low_orange": 3.0,
+      "high_orange": 3.6,
+      "high_red": 3.8
+    },
+    "ADCS.RW.Motorcurrent": {
+      "id": "0xa009",
+      "type": "F32",
+      "description": "CubeWheel \u2014 Motor current",
+      "short_name": "Motor current",
+      "unit": "mA",
+      "high_orange": 270.0,
+      "high_red": 300.0
+    },
+    "ADCS.RW.Powerconsumption": {
+      "id": "0xa00a",
+      "type": "F32",
+      "description": "CubeWheel \u2014 Power consumption",
+      "short_name": "Power consumption",
+      "unit": "mW",
+      "high_orange": 780.0,
+      "high_red": 850.0
+    },
+    "ADCS.RW.Storedangularmomentum|H|": {
+      "id": "0xa00b",
+      "type": "F32",
+      "description": "CubeWheel \u2014 Stored angular momentum |H|",
+      "short_name": "Stored angular momentum |H|",
+      "unit": "mNms",
+      "high_orange": 2.52,
+      "high_red": 2.66
+    },
+    "ADCS.RW.Unittemperature": {
+      "id": "0xa00c",
+      "type": "F32",
+      "description": "CubeWheel \u2014 Unit temperature",
+      "short_name": "Unit temperature",
+      "unit": "\u00b0C",
+      "low_red": -35.0,
+      "low_orange": -25.0,
+      "high_orange": 65.0,
+      "high_red": 70.0
+    },
+    "ADCS.RW.Residualmagneticdipole": {
+      "id": "0xa00d",
+      "type": "F32",
+      "description": "CubeWheel \u2014 Residual magnetic dipole",
+      "short_name": "Residual magnetic dipole",
+      "unit": "nT",
+      "high_orange": 1860.0,
+      "high_red": 2000.0
+    },
+    "ADCS.CSS.Short-CircuitCurrentISC": {
+      "id": "0xa00e",
+      "type": "F32",
+      "description": "CSS SLCD-61N8 \u2014 Short-Circuit Current  ISC",
+      "short_name": "Short-Circuit Current  ISC",
+      "unit": "\u00b5A",
+      "low_red": 30.0,
+      "low_orange": 70.0
+    },
+    "ADCS.CSS.Open-CircuitVoltageVOC": {
+      "id": "0xa00f",
+      "type": "F32",
+      "description": "CSS SLCD-61N9 \u2014 Open-Circuit Voltage  VOC",
+      "short_name": "Open-Circuit Voltage  VOC",
+      "unit": "V",
+      "low_orange": 0.25,
+      "high_orange": 0.65,
+      "high_red": 0.8
+    },
+    "ADCS.CSS.ReverseDarkCurrentID": {
+      "id": "0xa010",
+      "type": "F32",
+      "description": "CSS SLCD-61N10 \u2014 Reverse Dark Current  ID",
+      "short_name": "Reverse Dark Current  ID",
+      "unit": "\u00b5A",
+      "high_orange": 3.0,
+      "high_red": 5.0
+    },
+    "ADCS.CSS.JunctionCapacitanceCJ": {
+      "id": "0xa011",
+      "type": "F32",
+      "description": "CSS SLCD-61N11 \u2014 Junction Capacitance  CJ",
+      "short_name": "Junction Capacitance  CJ",
+      "unit": "pF",
+      "high_orange": 120.0,
+      "high_red": 150.0
+    },
+    "ADCS.CSS.ReverseBiasVoltageVR": {
+      "id": "0xa012",
+      "type": "F32",
+      "description": "CSS SLCD-61N12 \u2014 Reverse Bias Voltage  VR",
+      "short_name": "Reverse Bias Voltage  VR",
+      "unit": "V",
+      "high_orange": 5.5,
+      "high_red": 6.0
+    },
+    "ADCS.CSS.UnitTemperature": {
+      "id": "0xa013",
+      "type": "F32",
+      "description": "CSS SLCD-61N13 \u2014 Unit Temperature",
+      "short_name": "Unit Temperature",
+      "unit": "\u00b0C",
+      "low_red": -40.0,
+      "low_orange": -30.0,
+      "high_orange": 100.0,
+      "high_red": 125.0
+    },
+    "ADCS.CSS.SunIncidenceAngle": {
+      "id": "0xa014",
+      "type": "F32",
+      "description": "CSS SLCD-61N14 \u2014 Sun Incidence Angle",
+      "short_name": "Sun Incidence Angle",
+      "unit": "deg",
+      "high_orange": 65.0,
+      "high_red": 75.0
+    },
+    "ADCS.CSEarth.SupplyVoltage": {
+      "id": "0xa015",
+      "type": "F32",
+      "description": "CubeSense Earth \u2014 Supply Voltage (3.3 V rail)",
+      "short_name": "Supply Voltage",
+      "unit": "V",
+      "low_red": 2.5,
+      "low_orange": 3.0,
+      "high_orange": 3.5,
+      "high_red": 3.9
+    },
+    "ADCS.CSEarth.AverageCurrentDraw": {
+      "id": "0xa016",
+      "type": "F32",
+      "description": "CubeSense Earth \u2014 Average Current Draw (3.3 V)",
+      "short_name": "Average Current Draw",
+      "unit": "mA",
+      "low_red": 5.0,
+      "low_orange": 20.0,
+      "high_orange": 55.0,
+      "high_red": 80.0
+    },
+    "ADCS.CSEarth.InrushCurrentPeak": {
+      "id": "0xa017",
+      "type": "F32",
+      "description": "CubeSense Earth \u2014 Inrush Current Peak (power-on)",
+      "short_name": "Inrush Current Peak",
+      "unit": "mA",
+      "high_orange": 300.0,
+      "high_red": 400.0
+    },
+    "ADCS.CSEarth.LogicSignalVoltage": {
+      "id": "0xa018",
+      "type": "F32",
+      "description": "CubeSense Earth \u2014 Logic Signal Voltage (I/O pins)",
+      "short_name": "Logic Signal Voltage",
+      "unit": "V",
+      "high_orange": 3.5,
+      "high_red": 3.6
+    },
+    "ADCS.CSEarth.UnitTemperature": {
+      "id": "0xa019",
+      "type": "F32",
+      "description": "CubeSense Earth \u2014 Unit Temperature",
+      "short_name": "Unit Temperature",
+      "unit": "\u00b0C",
+      "low_red": -35.0,
+      "low_orange": -25.0,
+      "high_orange": 75.0,
+      "high_red": 80.0
+    },
+    "ADCS.CSEarth.MeasuredPitchAngle": {
+      "id": "0xa01a",
+      "type": "F32",
+      "description": "CubeSense Earth \u2014 Measured Pitch Angle (elevation)",
+      "short_name": "Measured Pitch Angle",
+      "unit": "\u00b0",
+      "low_red": -45.0,
+      "low_orange": -36.0,
+      "high_orange": 36.0,
+      "high_red": 45.0
+    },
+    "ADCS.CSEarth.MeasuredRollAngle": {
+      "id": "0xa01b",
+      "type": "F32",
+      "description": "CubeSense Earth \u2014 Measured Roll Angle (rotation)",
+      "short_name": "Measured Roll Angle",
+      "unit": "\u00b0",
+      "low_red": -50.0,
+      "low_orange": -45.0,
+      "high_orange": 45.0,
+      "high_red": 50.0
+    },
+    "ADCS.CSEarth.MeasurementAccuracy": {
+      "id": "0xa01c",
+      "type": "F32",
+      "description": "CubeSense Earth \u2014 Measurement Accuracy (roll & pitch, 3 sigma)",
+      "short_name": "Measurement Accuracy",
+      "unit": "\u00b0",
+      "high_orange": 2.0,
+      "high_red": 3.0
+    },
+    "ADCS.CSEarth.DetectionSuccessRate": {
+      "id": "0xa01d",
+      "type": "F32",
+      "description": "CubeSense Earth \u2014 Detection Success Rate (per 10 frames)",
+      "short_name": "Detection Success Rate",
+      "unit": "frames",
+      "low_red": 0.0,
+      "low_orange": 3.0
+    },
+    "ADCS.CSEarth.BodySlewRateDuringMeasure": {
+      "id": "0xa01e",
+      "type": "F32",
+      "description": "CubeSense Earth \u2014 Body Slew Rate During Measurement",
+      "short_name": "Body Slew Rate During Measurement",
+      "unit": "\u00b0/s",
+      "high_orange": 12.0,
+      "high_red": 14.0
+    },
+    "ADCS.CSSun.SupplyVoltage": {
+      "id": "0xa01f",
+      "type": "F32",
+      "description": "CubeSense Sun \u2014 Supply Voltage (3.3 V rail)",
+      "short_name": "Supply Voltage",
+      "unit": "V",
+      "low_red": 2.5,
+      "low_orange": 3.0,
+      "high_orange": 3.5,
+      "high_red": 3.9
+    },
+    "ADCS.CSSun.AverageCurrentDraw": {
+      "id": "0xa020",
+      "type": "F32",
+      "description": "CubeSense Sun \u2014 Average Current Draw (3.3 V)",
+      "short_name": "Average Current Draw",
+      "unit": "mA",
+      "low_red": 5.0,
+      "low_orange": 15.0,
+      "high_orange": 70.0,
+      "high_red": 90.0
+    },
+    "ADCS.CSSun.InrushCurrentPeak": {
+      "id": "0xa021",
+      "type": "F32",
+      "description": "CubeSense Sun \u2014 Inrush Current Peak (at enable)",
+      "short_name": "Inrush Current Peak",
+      "unit": "mA",
+      "high_orange": 370.0,
+      "high_red": 400.0
+    },
+    "ADCS.CSSun.LogicSignalVoltage": {
+      "id": "0xa022",
+      "type": "F32",
+      "description": "CubeSense Sun \u2014 Logic Signal Voltage (I/O pins)",
+      "short_name": "Logic Signal Voltage",
+      "unit": "V",
+      "high_orange": 3.5,
+      "high_red": 3.6
+    },
+    "ADCS.CSSun.UnitTemperature": {
+      "id": "0xa023",
+      "type": "F32",
+      "description": "CubeSense Sun \u2014 Unit Temperature",
+      "short_name": "Unit Temperature",
+      "unit": "\u00b0C",
+      "low_red": -35.0,
+      "low_orange": -25.0,
+      "high_orange": 75.0,
+      "high_red": 80.0
+    },
+    "ADCS.CSSun.SunVectorAlphaAngle": {
+      "id": "0xa024",
+      "type": "F32",
+      "description": "CubeSense Sun \u2014 Sun Vector Alpha Angle (alpha)",
+      "short_name": "Sun Vector Alpha Angle",
+      "unit": "\u00b0",
+      "low_red": -90.0,
+      "low_orange": -83.0,
+      "high_orange": 83.0,
+      "high_red": 90.0
+    },
+    "ADCS.CSSun.SunVectorBetaAngle": {
+      "id": "0xa025",
+      "type": "F32",
+      "description": "CubeSense Sun \u2014 Sun Vector Beta Angle (beta)",
+      "short_name": "Sun Vector Beta Angle",
+      "unit": "\u00b0",
+      "low_red": -90.0,
+      "low_orange": -83.0,
+      "high_orange": 83.0,
+      "high_red": 90.0
+    },
+    "ADCS.CSSun.SunUnitVectorMagnitude|[x": {
+      "id": "0xa026",
+      "type": "F32",
+      "description": "CubeSense Sun \u2014 Sun Unit Vector Magnitude |[x,y,z]|",
+      "short_name": "Sun Unit Vector Magnitude |[x,y,z]|",
+      "unit": "X",
+      "low_red": 0.9,
+      "low_orange": 0.95,
+      "high_orange": 1.05,
+      "high_red": 1.1
+    },
+    "ADCS.CSSun.MeasurementAccuracy": {
+      "id": "0xa027",
+      "type": "F32",
+      "description": "CubeSense Sun \u2014 Measurement Accuracy (2 sigma)",
+      "short_name": "Measurement Accuracy",
+      "unit": "\u00b0",
+      "high_orange": 0.5,
+      "high_red": 1.0
+    },
+    "ADCS.CSSun.DetectionSuccessRate": {
+      "id": "0xa028",
+      "type": "F32",
+      "description": "CubeSense Sun \u2014 Detection Success Rate (per 10 frames)",
+      "short_name": "Detection Success Rate",
+      "unit": "frames",
+      "low_red": 0.0,
+      "low_orange": 3.0
+    },
+    "ADCS.CSSun.BodySlewRateDuringMeasure": {
+      "id": "0xa029",
+      "type": "F32",
+      "description": "CubeSense Sun \u2014 Body Slew Rate During Measurement",
+      "short_name": "Body Slew Rate During Measurement",
+      "unit": "\u00b0/s",
+      "high_orange": 60.0,
+      "high_red": 70.0
+    },
+    "ADCS.CSSun.ImageSensorExposureLevel": {
+      "id": "0xa02a",
+      "type": "F32",
+      "description": "CubeSense Sun \u2014 Image Sensor Exposure Level (auto-adjust)",
+      "short_name": "Image Sensor Exposure Level",
+      "unit": "counts",
+      "high_orange": 245.0,
+      "high_red": 255.0
+    }
+  }
+}

@@ -42,6 +42,7 @@ Vue.component("tabbed-etc", {
                     ["Uplink", "UpL"], 
                     ["Downlink", "DnL"], 
                     ["SimHealth", "Sim", "Sim Health"], 
+                    ["ADCSHealth", "ADCS", "ADCS Health"], 
                     ["Dictionaries", "Dct"],
                     ["Charts", "Chr"], 
                     ["Logs", "Log"],

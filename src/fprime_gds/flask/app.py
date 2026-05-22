@@ -247,6 +247,12 @@ def sim_health_ranges():
     ranges_dir = os.path.join(os.path.dirname(__file__), "..", "..", "..", "deployment-sim", "dict")
     return flask.send_from_directory(ranges_dir, ranges_file)
 
+@app.route("/adcs-health/ranges")
+def adcs_health_ranges():
+    """Serve the ADCS telemetry ranges JSON."""
+    ranges_dir = os.path.join(os.path.dirname(__file__), "..", "..", "..", "deployment-sim", "dict")
+    return flask.send_from_directory(ranges_dir, "adcs_ranges.json")
+
 
 @app.after_request
 def set_no_cache(response):

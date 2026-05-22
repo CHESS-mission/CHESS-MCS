@@ -1529,6 +1529,50 @@
     <channel component="DeploymentSim" name="SolarCellsEfficiency" id="0x900f" description="Solar cells efficiency" low_red="0.2" low_orange="0.23" low_yellow="0.26" type="F64"/>
     <channel component="DeploymentSim" name="StoragePayload" id="0x9010" description="Payload data storage (GB)" high_yellow="50" high_orange="100" high_red="150" type="F64"/>
     <channel component="DeploymentSim" name="StorageHK" id="0x9011" description="Housekeeping data storage (GB)" high_yellow="5" high_orange="15" high_red="30" type="F64"/>
+    <!-- ADCS telemetry channels (placeholders from FDIR document) -->
+    <channel component="ADCS" name="MTQ_Supplyvoltage" id="0xa000" description="CubeTorquer — Supply voltage" high_orange="5.1" high_red="5.5" type="F32"/>
+    <channel component="ADCS" name="MTQ_Coilcurrent" id="0xa001" description="CubeTorquer — Coil current" low_red="30" low_orange="85" high_orange="185" high_red="210" type="F32"/>
+    <channel component="ADCS" name="MTQ_PWMdutycycle" id="0xa002" description="CubeTorquer — PWM duty cycle" high_orange="85" high_red="100" type="F32"/>
+    <channel component="ADCS" name="MTQ_Estimatedminimummagneticm" id="0xa003" description="CubeTorquer — Magnetic moment" low_orange="0.05" high_orange="0.34" high_red="0.4" type="F32"/>
+    <channel component="ADCS" name="MTQ_Unittemperature" id="0xa004" description="CubeTorquer — Temperature" low_red="-35" low_orange="-25" high_orange="65" high_red="70" type="F32"/>
+    <channel component="ADCS" name="RW_Wheelspeed" id="0xa005" description="CubeWheel — Wheel speed" low_red="-9500" low_orange="-8500" high_orange="8500" high_red="9500" type="F32"/>
+    <channel component="ADCS" name="RW_Speedtrackingerror" id="0xa006" description="CubeWheel — Speed tracking error" high_orange="500" high_red="1000" type="F32"/>
+    <channel component="ADCS" name="RW_Motorsupplyvoltage" id="0xa007" description="CubeWheel — Motor supply voltage" low_red="6" low_orange="6.4" high_orange="16" high_red="16.8" type="F32"/>
+    <channel component="ADCS" name="RW_Digitalsupplyvoltage" id="0xa008" description="CubeWheel — Digital supply voltage" low_red="2.7" low_orange="3" high_orange="3.6" high_red="3.8" type="F32"/>
+    <channel component="ADCS" name="RW_Motorcurrent" id="0xa009" description="CubeWheel — Motor current" high_orange="270" high_red="300" type="F32"/>
+    <channel component="ADCS" name="RW_Powerconsumption" id="0xa00a" description="CubeWheel — Power consumption" high_orange="780" high_red="850" type="F32"/>
+    <channel component="ADCS" name="RW_Storedangularmomentum" id="0xa00b" description="CubeWheel — Stored angular momentum" high_orange="2.52" high_red="2.66" type="F32"/>
+    <channel component="ADCS" name="RW_Unittemperature" id="0xa00c" description="CubeWheel — Temperature" low_red="-35" low_orange="-25" high_orange="65" high_red="70" type="F32"/>
+    <channel component="ADCS" name="RW_Residualmagneticdipole" id="0xa00d" description="CubeWheel — Residual magnetic dipole" high_orange="1860" high_red="2000" type="F32"/>
+    <channel component="ADCS" name="CSS_ShortCircuitCurrentISC" id="0xa00e" description="CSS — Short-Circuit Current ISC" low_red="30" low_orange="70" type="F32"/>
+    <channel component="ADCS" name="CSS_OpenCircuitVoltageVOC" id="0xa00f" description="CSS — Open-Circuit Voltage VOC" low_orange="0.25" high_orange="0.65" high_red="0.8" type="F32"/>
+    <channel component="ADCS" name="CSS_ReverseDarkCurrentID" id="0xa010" description="CSS — Reverse Dark Current ID" high_orange="3" high_red="5" type="F32"/>
+    <channel component="ADCS" name="CSS_JunctionCapacitanceCJ" id="0xa011" description="CSS — Junction Capacitance CJ" high_orange="120" high_red="150" type="F32"/>
+    <channel component="ADCS" name="CSS_ReverseBiasVoltageVR" id="0xa012" description="CSS — Reverse Bias Voltage VR" high_orange="5.5" high_red="6" type="F32"/>
+    <channel component="ADCS" name="CSS_UnitTemperature" id="0xa013" description="CSS — Temperature" low_red="-40" low_orange="-30" high_orange="100" high_red="125" type="F32"/>
+    <channel component="ADCS" name="CSS_SunIncidenceAngle" id="0xa014" description="CSS — Sun Incidence Angle" high_orange="65" high_red="75" type="F32"/>
+    <channel component="ADCS" name="CSEarth_SupplyVoltage" id="0xa015" description="CubeSense Earth — Supply Voltage" low_red="2.5" low_orange="3" high_orange="3.5" high_red="3.9" type="F32"/>
+    <channel component="ADCS" name="CSEarth_AverageCurrentDraw" id="0xa016" description="CubeSense Earth — Average Current" low_red="5" low_orange="20" high_orange="55" high_red="80" type="F32"/>
+    <channel component="ADCS" name="CSEarth_InrushCurrentPeak" id="0xa017" description="CubeSense Earth — Inrush Current Peak" high_orange="300" high_red="400" type="F32"/>
+    <channel component="ADCS" name="CSEarth_LogicSignalVoltage" id="0xa018" description="CubeSense Earth — Logic Signal Voltage" high_orange="3.5" high_red="3.6" type="F32"/>
+    <channel component="ADCS" name="CSEarth_UnitTemperature" id="0xa019" description="CubeSense Earth — Temperature" low_red="-35" low_orange="-25" high_orange="75" high_red="80" type="F32"/>
+    <channel component="ADCS" name="CSEarth_MeasuredPitchAngle" id="0xa01a" description="CubeSense Earth — Pitch Angle" low_red="-45" low_orange="-36" high_orange="36" high_red="45" type="F32"/>
+    <channel component="ADCS" name="CSEarth_MeasuredRollAngle" id="0xa01b" description="CubeSense Earth — Roll Angle" low_red="-50" low_orange="-45" high_orange="45" high_red="50" type="F32"/>
+    <channel component="ADCS" name="CSEarth_MeasurementAccuracy" id="0xa01c" description="CubeSense Earth — Measurement Accuracy" high_orange="2" high_red="3" type="F32"/>
+    <channel component="ADCS" name="CSEarth_DetectionSuccessRate" id="0xa01d" description="CubeSense Earth — Detection Success Rate" low_red="0" low_orange="3" type="F32"/>
+    <channel component="ADCS" name="CSEarth_BodySlewRate" id="0xa01e" description="CubeSense Earth — Body Slew Rate" high_orange="12" high_red="14" type="F32"/>
+    <channel component="ADCS" name="CSSun_SupplyVoltage" id="0xa01f" description="CubeSense Sun — Supply Voltage" low_red="2.5" low_orange="3" high_orange="3.5" high_red="3.9" type="F32"/>
+    <channel component="ADCS" name="CSSun_AverageCurrentDraw" id="0xa020" description="CubeSense Sun — Average Current" low_red="5" low_orange="15" high_orange="70" high_red="90" type="F32"/>
+    <channel component="ADCS" name="CSSun_InrushCurrentPeak" id="0xa021" description="CubeSense Sun — Inrush Current Peak" high_orange="370" high_red="400" type="F32"/>
+    <channel component="ADCS" name="CSSun_LogicSignalVoltage" id="0xa022" description="CubeSense Sun — Logic Signal Voltage" high_orange="3.5" high_red="3.6" type="F32"/>
+    <channel component="ADCS" name="CSSun_UnitTemperature" id="0xa023" description="CubeSense Sun — Temperature" low_red="-35" low_orange="-25" high_orange="75" high_red="80" type="F32"/>
+    <channel component="ADCS" name="CSSun_SunVectorAlphaAngle" id="0xa024" description="CubeSense Sun — Alpha Angle" low_red="-90" low_orange="-83" high_orange="83" high_red="90" type="F32"/>
+    <channel component="ADCS" name="CSSun_SunVectorBetaAngle" id="0xa025" description="CubeSense Sun — Beta Angle" low_red="-90" low_orange="-83" high_orange="83" high_red="90" type="F32"/>
+    <channel component="ADCS" name="CSSun_SunUnitVectorMagnitude" id="0xa026" description="CubeSense Sun — Unit Vector Magnitude" low_red="0.9" low_orange="0.95" high_orange="1.05" high_red="1.1" type="F32"/>
+    <channel component="ADCS" name="CSSun_MeasurementAccuracy" id="0xa027" description="CubeSense Sun — Measurement Accuracy" high_orange="0.5" high_red="1" type="F32"/>
+    <channel component="ADCS" name="CSSun_DetectionSuccessRate" id="0xa028" description="CubeSense Sun — Detection Success Rate" low_red="0" low_orange="3" type="F32"/>
+    <channel component="ADCS" name="CSSun_BodySlewRate" id="0xa029" description="CubeSense Sun — Body Slew Rate" high_orange="60" high_red="70" type="F32"/>
+    <channel component="ADCS" name="CSSun_ImageSensorExposureLevel" id="0xa02a" description="CubeSense Sun — Exposure Level" high_orange="245" high_red="255" type="F32"/>
   </channels>
   <parameters>
     <parameter component="typeDemo" name="CHOICE_PRM" id="0xe00" default="0"/>

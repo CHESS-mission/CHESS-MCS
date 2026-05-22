@@ -494,3 +494,29 @@ fieldset.fp-subform {
         gap: 0.15rem;
     }
 }
+
+/**
+ * ADCS Health tab styles (extends the .sim-* base styles)
+ */
+.adcs-panel {
+    border-left-color: #e67e22;
+}
+
+.adcs-channel-count {
+    float: right;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #adb5bd;
+}
+
+.adcs-loading {
+    text-align: center;
+    padding: 3rem;
+    color: #6c757d;
+    font-size: 1.1rem;
+}
+
+.adcs-placeholder-note {
+    color: #adb5bd;
+    font-style: italic;
+}
